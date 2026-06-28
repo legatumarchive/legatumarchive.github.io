@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legatum Archive · Coleccionables de Ayer y Hoy · Málaga, España</title>
+  <meta name="description" content="Tienda especializada en coleccionables, videojuegos retro, ropa vintage y cartas TCG. Tasación profesional en Málaga y provincia. Legatum Archive." />
+  <meta name="keywords" content="coleccionables Málaga, videojuegos retro, ropa vintage, TCG, tasación coleccionables, Legatum Archive" />
+  <meta property="og:title" content="Legatum Archive · Coleccionables de Ayer y Hoy" />
+  <meta property="og:description" content="Piezas con historia. Tasación profesional en Málaga y provincia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://legatumarchive.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css" />
+  <style>
+    :root {
+      --ink:       #1A1612;
+      --ink-deep:  #0F0D0A;
+      --gold:      #C9A84C;
+      --gold-dim:  rgba(201,168,76,0.2);
+      --gold-dark: #A8883A;
+      --cream:     #FAF6EE;
+      --parch:     #F5EFE0;
+      --grey:      #B0A898;
+      --grey-light:#D4CFC6;
+      --card-dark: #252018;
+      --white:     #FFFFFF;
+      --grid-line: rgba(201,168,76,0.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      background: var(--ink);
+      color: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── UTILITIES ── */
+    .eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1.5rem 0;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+    .divider-diamond {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--ink-deep);
+    }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--ink-deep);
+    }
+    .btn-outline-grey {
+      background: transparent;
+      color: var(--grey-light);
+      border: 1px solid rgba(176,168,152,0.4);
+    }
+    .btn-outline-grey:hover {
+      border-color: var(--grey-light);
+      color: var(--white);
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ink);
+      border-bottom: 1px solid var(--gold-dim);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .nav-logo .l-legatum { color: var(--gold); font-weight: 700; }
+    .nav-logo .l-archive { color: var(--white); font-weight: 300; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cta { font-size: 0.72rem !important; padding: 0.55rem 1.3rem !important; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 4rem);
+      position: relative;
+      overflow: hidden;
+      background:
+        repeating-linear-gradient(0deg, var(--grid-line) 0px, var(--grid-line) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(90deg, var(--grid-line) 0px, var(--grid-line) 1px, transparent 1px, transparent 80px),
+        var(--ink);
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s ease forwards 0.2s;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { margin-bottom: 2rem; }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      color: var(--grey-light);
+      margin-bottom: 1rem;
+    }
+
+    .hero-p {
+      font-size: 0.92rem;
+      color: var(--grey);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .hero-location {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--ink-deep);
+      margin-top: 0.8rem;
+      line-height: 1.2;
+    }
+    .section-title em { font-style: italic; color: var(--gold-dark); }
+    .section-title-light {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-top: 0.8rem;
+      line-height: 1.2;
+    }
+    .section-title-light em { font-style: italic; color: var(--gold); }
+
+    /* ── PRODUCTOS ── */
+    #productos { background: var(--parch); }
+    #productos .section-title { color: var(--ink-deep); }
+    #productos .eyebrow { color: var(--gold-dark); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--ink);
+      border: 1px solid var(--gold-dim);
+      padding: 0;
+      transition: transform 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .card-img {
+      background: var(--card-dark);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .card-img i { font-size: 3rem; color: var(--gold); opacity: 0.6; }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      background: var(--gold);
+      color: var(--ink-deep);
+    }
+
+    .card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-era {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--grey);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.2rem;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .card-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--gold-dark);
+    }
+    .card-btn {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .card-btn:hover {
+      background: var(--gold);
+      color: var(--ink-deep);
+      border-color: var(--gold);
+    }
+
+    /* ── TASACIÓN ── */
+    #tasacion {
+      background:
+        repeating-linear-gradient(0deg, var(--grid-line) 0px, var(--grid-line) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(90deg, var(--grid-line) 0px, var(--grid-line) 1px, transparent 1px, transparent 80px),
+        var(--ink);
+    }
+
+    .tasacion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .tasacion-text .section-title-light { text-align: left; }
+    .tasacion-text .eyebrow { display: block; margin-bottom: 0.8rem; }
+
+    .tasacion-p {
+      font-size: 0.9rem;
+      color: var(--grey);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .tasacion-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .tasacion-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+      color: var(--grey-light);
+      margin-bottom: 0.7rem;
+      line-height: 1.6;
+    }
+    .tasacion-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      margin-top: 0.35rem;
+    }
+
+    .tasacion-form {
+      background: var(--card-dark);
+      border: 1px solid var(--gold-dim);
+      padding: 2.5rem;
+    }
+
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--gold-dim);
+      color: var(--cream);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group select option { background: var(--card-dark); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--ink-deep);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-dark); }
+
+    /* ── BLOG ── */
+    #blog { background: var(--cream); }
+    #blog .section-title { color: var(--ink-deep); }
+    #blog .eyebrow { color: var(--gold-dark); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      border: 1px solid rgba(201,168,76,0.15);
+      transition: border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+    }
+    .blog-card:hover { border-color: var(--gold-dark); }
+
+    .blog-img {
+      background: var(--ink);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .blog-card.featured .blog-img { height: 260px; }
+    .blog-img i { font-size: 2.5rem; color: var(--gold); opacity: 0.5; }
+
+    .blog-cat {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      background: var(--gold);
+      color: var(--ink-deep);
+    }
+
+    .blog-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-date {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--grey);
+      margin-bottom: 0.5rem;
+    }
+    .blog-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink-deep);
+      line-height: 1.35;
+      margin-bottom: 0.6rem;
+    }
+    .blog-card.featured .blog-title { font-size: 1.5rem; }
+    .blog-excerpt {
+      font-size: 0.83rem;
+      color: #6B6358;
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .blog-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--gold-dark);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .blog-link:hover { color: var(--ink-deep); }
+
+    /* ── REDES ── */
+    #redes { background: var(--parch); text-align: center; }
+    #redes .eyebrow { color: var(--gold-dark); }
+    #redes .section-title { color: var(--ink-deep); }
+
+    .redes-p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: #6B6358;
+      max-width: 480px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .redes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .red-card {
+      background: var(--ink);
+      border: 1px solid var(--gold-dim);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+    .red-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+    .red-card i { font-size: 2.2rem; color: var(--gold); margin-bottom: 0.8rem; display: block; }
+    .red-name {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .red-handle {
+      font-size: 0.78rem;
+      color: var(--grey);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink-deep);
+      border-top: 1px solid var(--gold-dim);
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 5rem) 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .footer-brand-name span:first-child { color: var(--gold); font-weight: 700; }
+    .footer-brand-name span:last-child { color: var(--white); font-weight: 300; }
+
+    .footer-desc {
+      font-size: 0.83rem;
+      color: var(--grey);
+      line-height: 1.8;
+    }
+
+    .footer-col-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a {
+      font-size: 0.83rem;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gold-dim);
+      padding-top: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+    }
+    .footer-location {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .tasacion-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--ink); border-bottom: 1px solid var(--gold-dim); padding: 1.5rem 2rem; gap: 1.2rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="l-legatum">Legatum</span>
+    <span class="l-archive">Archive</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#productos">Tienda</a></li>
+    <li><a href="#tasacion">Tasación</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#redes">Nosotros</a></li>
+    <li><a href="#tasacion" class="btn btn-outline-gold nav-cta">Contactar</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <i class="ti ti-menu-2"></i>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="eyebrow hero-eyebrow">Coleccionables · Tasación · Historia</p>
+    <h1 class="hero-h1">El archivo de lo <em>irrepetible</em></h1>
+    <p class="hero-sub">Ayer y hoy. Piezas con memoria.</p>
+    <p class="hero-p">Videojuegos retro, ropa vintage, cartas TCG y coleccionables con historia. Cada pieza seleccionada, verificada y listada con el rigor de quien entiende lo que vende.</p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn btn-gold">Explorar la tienda</a>
+      <a href="#tasacion" class="btn btn-outline-grey">Solicitar tasación</a>
+    </div>
+    <p class="hero-location">─── Málaga · España ───</p>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+  <div class="section-header">
+    <p class="eyebrow">Catálogo</p>
+    <div class="divider"><div class="divider-diamond"></div></div>
+    <h2 class="section-title">Piezas <em>seleccionadas</em></h2>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="card-img">
+        <i class="ti ti-device-gamepad-2"></i>
+        <span class="card-badge">Rareza</span>
+      </div>
+      <div class="card-body">
+        <p class="card-era">PlayStation · PAL España</p>
+        <h3 class="card-name">Videojuegos Retro PS1 / PS2</h3>
+        <p class="card-desc">Títulos PAL verificados con disponibilidad de idioma en disco. De clásicos olvidados a joyas de culto.</p>
+        <div class="card-footer">
+          <span class="card-price">Desde 4,90 €</span>
+          <a href="#tasacion" class="card-btn">Ver pieza</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-img">
+        <i class="ti ti-shirt"></i>
+        <span class="card-badge">Vintage</span>
+      </div>
+      <div class="card-body">
+        <p class="card-era">Décadas 80–00 · Streetwear</p>
+        <h3 class="card-name">Ropa Vintage & Sportswear</h3>
+        <p class="card-desc">Prendas con carácter. Selección de ropa vintage y sportswear de época con historia detrás de cada etiqueta.</p>
+        <div class="card-footer">
+          <span class="card-price">Desde 12 €</span>
+          <a href="#tasacion" class="card-btn">Ver pieza</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-img">
+        <i class="ti ti-cards"></i>
+        <span class="card-badge">Exclusivo</span>
+      </div>
+      <div class="card-body">
+        <p class="card-era">TCG · One Piece · Pokémon</p>
+        <h3 class="card-name">Cartas TCG & Coleccionables</h3>
+        <p class="card-desc">Singles y sets de Trading Card Games. Cartas gradeadas, paralelas y rarezas de mercado internacional.</p>
+        <div class="card-footer">
+          <span class="card-price">Consultar</span>
+          <a href="#tasacion" class="card-btn">Ver pieza</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="card-img">
+        <i class="ti ti-trophy"></i>
+        <span class="card-badge">Nuevo</span>
+      </div>
+      <div class="card-body">
+        <p class="card-era">Memorabilia · Ediciones Limitadas</p>
+        <h3 class="card-name">Coleccionables & Memorabilia</h3>
+        <p class="card-desc">Piezas únicas de eventos, ediciones de coleccionista y memorabilia cultural con procedencia verificada.</p>
+        <div class="card-footer">
+          <span class="card-price">Consultar</span>
+          <a href="#tasacion" class="card-btn">Ver pieza</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TASACIÓN -->
+<section id="tasacion">
+  <div class="tasacion-grid">
+    <div class="tasacion-text">
+      <span class="eyebrow">Servicio profesional</span>
+      <div class="divider" style="justify-content:flex-start; margin:1rem 0 1.2rem;">
+        <div class="divider-diamond"></div>
+        <div style="height:1px;flex:1;background:var(--gold-dim);max-width:80px;"></div>
+      </div>
+      <h2 class="section-title-light">Tasación <em>a domicilio</em></h2>
+      <p class="tasacion-p">¿Tienes piezas en casa y no sabes cuánto valen? Realizamos tasaciones presenciales en Málaga capital y toda la provincia. Sin compromiso de venta.</p>
+      <ul class="tasacion-list">
+        <li>Videojuegos retro — PS1, PS2, PSP, GBA, Wii y más</li>
+        <li>Ropa vintage y sportswear de época</li>
+        <li>Cartas TCG — Pokémon, One Piece, Magic y otros</li>
+        <li>Coleccionables, memorabilia y ediciones limitadas</li>
+        <li>Lotes completos y colecciones familiares</li>
+      </ul>
+      <a href="mailto:info@legatumarchive.com" class="btn btn-gold">Solicitar tasación gratuita</a>
+    </div>
+    <div class="tasacion-form">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Categoría</label>
+        <select>
+          <option value="" disabled selected>Selecciona una categoría</option>
+          <option>Videojuegos retro</option>
+          <option>Ropa vintage / sportswear</option>
+          <option>Cartas TCG</option>
+          <option>Coleccionables / memorabilia</option>
+          <option>Lote mixto</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea placeholder="Describe brevemente las piezas que quieres tasar..."></textarea>
+      </div>
+      <button class="form-submit">Enviar solicitud</button>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-header">
+    <p class="eyebrow">Archivo & Cultura</p>
+    <div class="divider"><div class="divider-diamond"></div></div>
+    <h2 class="section-title">Historias que <em>merecen contarse</em></h2>
+  </div>
+  <div class="blog-grid">
+
+    <div class="blog-card featured">
+      <div class="blog-img">
+        <i class="ti ti-device-gamepad"></i>
+        <span class="blog-cat">Curiosidades</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">Junio 2025</p>
+        <h3 class="blog-title">El vídeo del South Park escondido dentro de Tiger Woods 99</h3>
+        <p class="blog-excerpt">Un empleado de EA smuggló el piloto sin emitir de South Park dentro del código de Tiger Woods 99 para PS1. Décadas después, los dataminers lo encontraron. Esta es la historia.</p>
+        <a href="#" class="blog-link">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <i class="ti ti-device-tv-old"></i>
+        <span class="blog-cat">Pronto valdrá mucho</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">Mayo 2025</p>
+        <h3 class="blog-title">VHS: las tres reglas del coleccionismo que nadie te cuenta</h3>
+        <p class="blog-excerpt">No todo VHS vale dinero. Hay tres factores que separan un casete de €2 de uno que se subasta por miles. Y las cintas Disney Black Diamond no son lo que crees.</p>
+        <a href="#" class="blog-link">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-img">
+        <i class="ti ti-brain"></i>
+        <span class="blog-cat">Historia</span>
+      </div>
+      <div class="blog-body">
+        <p class="blog-date">Abril 2025</p>
+        <h3 class="blog-title">Demis Hassabis diseñó Theme Park a los 17 años</h3>
+        <p class="blog-excerpt">Antes de ganar el Nobel de Química y fundar DeepMind, Hassabis era un prodigio del ajedrez que codificó uno de los grandes juegos de los 90. La pieza de PS1 que conecta el pasado con la IA.</p>
+        <a href="#" class="blog-link">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REDES -->
+<section id="redes">
+  <div class="section-header">
+    <p class="eyebrow">Comunidad</p>
+    <div class="divider"><div class="divider-diamond"></div></div>
+    <h2 class="section-title">Síguenos en <em>redes</em></h2>
+  </div>
+  <p class="redes-p">Contenido semanal sobre coleccionismo, curiosidades de videojuegos y cultura de la pieza única.</p>
+  <div class="redes-grid">
+    <a href="https://instagram.com/legatum.es" target="_blank" class="red-card">
+      <i class="ti ti-brand-instagram"></i>
+      <p class="red-name">Instagram</p>
+      <p class="red-handle">@legatum.es</p>
+    </a>
+    <a href="#" class="red-card">
+      <i class="ti ti-brand-tiktok"></i>
+      <p class="red-name">TikTok</p>
+      <p class="red-handle">@legatum.es</p>
+    </a>
+    <a href="#" class="red-card">
+      <i class="ti ti-brand-youtube"></i>
+      <p class="red-name">YouTube</p>
+      <p class="red-handle">@legatumarchive</p>
+    </a>
+    <a href="#" class="red-card">
+      <i class="ti ti-brand-facebook"></i>
+      <p class="red-name">Facebook</p>
+      <p class="red-handle">@legatumarchive</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">
+        <span>Legatum</span> <span>Archive</span>
+      </p>
+      <p class="footer-desc">Especialistas en coleccionables con historia. Tasación profesional, venta de videojuegos retro, ropa vintage y cartas TCG en Málaga y provincia.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Tienda</p>
+      <ul class="footer-links">
+        <li><a href="#productos">Videojuegos retro</a></li>
+        <li><a href="#productos">Ropa vintage</a></li>
+        <li><a href="#productos">Cartas TCG</a></li>
+        <li><a href="#productos">Coleccionables</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Servicios</p>
+      <ul class="footer-links">
+        <li><a href="#tasacion">Tasación gratuita</a></li>
+        <li><a href="#tasacion">Compra de lotes</a></li>
+        <li><a href="#tasacion">Asesoramiento</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Información</p>
+      <ul class="footer-links">
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#redes">Redes sociales</a></li>
+        <li><a href="mailto:info@legatumarchive.com">Contacto</a></li>
+        <li><a href="#">Aviso legal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Legatum Archive. Todos los derechos reservados.</p>
+    <p class="footer-location">Málaga · Andalucía · España</p>
+  </div>
+</footer>
+
+<script>
+  // Nav toggle mobile
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  // Close nav on link click
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  // Form submit placeholder
+  document.querySelector('.form-submit').addEventListener('click', function() {
+    this.textContent = 'Solicitud enviada ✓';
+    this.style.background = '#A8883A';
+    setTimeout(() => {
+      this.textContent = 'Enviar solicitud';
+      this.style.background = '';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
